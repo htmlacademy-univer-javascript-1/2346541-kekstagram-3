@@ -7,5 +7,4 @@ const getRandom = function(theMin,theMax){
 const checkLengthString = function(textString,lengthInput){
   return textString.length >=  lengthInput;
 };
-console.log(getRandom(2,10));
-console.log(checkLengthString('abcd',2));
+export{getRandom,checkLengthString};

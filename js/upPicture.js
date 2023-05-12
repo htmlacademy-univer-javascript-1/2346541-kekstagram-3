@@ -4,7 +4,6 @@ const overlay = document.querySelector('.img-upload__overlay');
 
 const refresh = function(){
   uplordPicture.value = '';
-  document.querySelector('text__');
 };
 const closeInterface = function(){
   document.body.classList.remove('modal-open');

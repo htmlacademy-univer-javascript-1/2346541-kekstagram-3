@@ -22,5 +22,7 @@ const openInterface = function(){
   document.body.classList.add('modal-open');
   overlay.classList.remove('hidden');
 };
+
 uplordPicture.addEventListener('click',openInterface);
 cancelUplord.addEventListener('click',closeInterface);
+

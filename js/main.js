@@ -1,4 +1,5 @@
 import {creatArray} from './data.js';
+import './upPicture.js';
 const picturesToAdd = document.querySelector('.pictures');
 const template = document.querySelector('#picture');
 const content = template.content;

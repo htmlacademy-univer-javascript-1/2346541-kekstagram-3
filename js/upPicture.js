@@ -4,6 +4,8 @@ const overlay = document.querySelector('.img-upload__overlay');
 
 const refresh = function(){
   uplordPicture.value = '';
+  document.querySelector('.text__hashtags').value = '';
+  document.querySelector('.text__description').value = '';
 };
 const closeInterface = function(){
   document.body.classList.remove('modal-open');
@@ -25,4 +27,4 @@ const openInterface = function(){
 
 uplordPicture.addEventListener('change',openInterface);
 cancelUplord.addEventListener('click',closeInterface);
-
+export{closeInterface};

@@ -1,24 +1,19 @@
-const getRandom = function(theMin,theMax){
-  if(theMin < 0 || theMax <= theMin){
-    return 0;
-  }
-  return Math.floor( Math.random() * (theMax - theMin) + theMin);
-};
-const checkLengthString = function(textString,lengthInput){
-  return textString.length >=  lengthInput;
-};
-const creatArray = function(){
-  const newArray = [];
-  for(let i = 1 ; i <= 25 ;i++){
-    const midArray = {id:i,url:`photos/${i}.jpg`,description:`some description for photo${i}`,like:getRandom(15,200),comments:getRandom(0,200)};
-    newArray.push(midArray);
-  }
-  return newArray;
-};
+import {creatArray} from './data.js';
+const picturesToAdd = document.querySelector('.pictures');
+const template = document.querySelector('#picture');
+const content = template.content;
+const documentFlagment = document.createDocumentFragment();
+const testArray = creatArray();
+for(let i = 0; i < testArray.length;i++){
+  const copyForInput = content.cloneNode(true);
+  copyForInput.querySelector('.picture__img').src = testArray[i].url;
+  copyForInput.querySelector('.picture__likes').textContent = testArray[i].like;
+  copyForInput.querySelector('.picture__comments').textContent = testArray[i].comments;
+  documentFlagment.append(copyForInput);
+}
 // eslint-disable-next-line no-console
-console.log(getRandom(15,20));
-// eslint-disable-next-line no-console
-console.log(checkLengthString('abcd',2));
-// eslint-disable-next-line no-console
-console.log(creatArray());
+console.log(documentFlagment);
+//to test the number and the out put of pictures
+picturesToAdd.appendChild(documentFlagment);
+
 

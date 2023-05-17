@@ -23,6 +23,6 @@ const openInterface = function(){
   overlay.classList.remove('hidden');
 };
 
-uplordPicture.addEventListener('click',openInterface);
+uplordPicture.addEventListener('change',openInterface);
 cancelUplord.addEventListener('click',closeInterface);
 

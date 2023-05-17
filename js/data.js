@@ -7,4 +7,19 @@ const creatArray = function(){
   }
   return newArray;
 };
-export{creatArray};
+const editPictures = function(midArray){
+  const picturesToAdd = document.querySelector('.pictures');
+  const template = document.querySelector('#picture');
+  const content = template.content;
+  const documentFlagment = document.createDocumentFragment();
+
+  for(let i = 0; i < midArray.length;i++){
+    const copyForInput = content.cloneNode(true);
+    copyForInput.querySelector('.picture__img').src = midArray[i].url;
+    copyForInput.querySelector('.picture__likes').textContent = midArray[i].likes;
+    copyForInput.querySelector('.picture__comments').textContent = midArray[i].comments;
+    documentFlagment.append(copyForInput);
+  }
+  picturesToAdd.appendChild(documentFlagment);
+};
+export{creatArray , editPictures};

@@ -1,3 +1,4 @@
+import { alertMessageInPicture } from './alert.js';
 const buttonSmall = document.querySelector('.scale__control--smaller');
 const valueSize = document.querySelector('.scale__control--value');
 const previewPath = document.querySelector('.img-upload__preview');
@@ -8,6 +9,8 @@ function makeSizeSmaller(){
     midSizeValue -=  25;
     valueSize.value = `${midSizeValue}%`;
     previewPath.style.transform = `scale(${  midSizeValue/100 })`;
+  }else{
+    alertMessageInPicture('size can not less than 25');
   }
 }
 buttonSmall.addEventListener('click',makeSizeSmaller);
@@ -21,6 +24,8 @@ function makeSizeBigger(){
     midSizeValue +=  25;
     valueSize.value = `${midSizeValue}%`;
     previewPath.style.transform = `scale(${  midSizeValue/100 })`;
+  }else{
+    alertMessageInPicture('size can not more than 100');
   }
 }
 
